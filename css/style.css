@@ -1,0 +1,13 @@
+html{
+height: 101%;
+overflow: -moz-scrollbars-vertical; 
+overflow-y: scroll;
+}
+
+.projim{
+float:left;
+margin-right: 10px;
+}
+/*body{
+background-color:#abb5bf;
+}*/
