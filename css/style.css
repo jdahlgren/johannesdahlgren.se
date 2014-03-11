@@ -4,10 +4,8 @@ overflow: -moz-scrollbars-vertical;
 overflow-y: scroll;
 }
 
-.projim{
-float:left;
-margin-right: 10px;
+.contact img{
+	width: 3%;
+	height: 3%;
+	margin-right: 10px;
 }
-/*body{
-background-color:#abb5bf;
-}*/

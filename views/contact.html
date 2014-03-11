@@ -1,1 +1,7 @@
 <h1>{{contactTitle}}</h1>
+
+<div ng-repeat="media in socialMedia" class="contact">
+<ul>
+	<li><a href="{{media.link}}"><img ng-src="{{media.logo}}"/>{{media.name}}</a></li>
+</ul>
+</div>
