@@ -10,6 +10,7 @@
 	</head>
 	<body>		
 		<div class="container" ng-controller="HomeCtrl">
+		<div class="wrapper">
 			<h1 ng-bind="title"></h1>
 			
 			<!-- <Navbar> -->
@@ -40,14 +41,14 @@
 			<div ng-view>
 			</div>
 			<!-- </Content> -->
-		
-			<footer>
-				<p>&copy; Johannes Dahlgren 2014</p>
-				<p>AngularJS, Bootstrap</p>
-			</footer>
-			
-			
+			<div class="push"></div>			
 		</div>
+		</div>
+		<footer class="container">
+			<p class="footer">&copy; Johannes Dahlgren 2014</p>
+			<p class="footer">AngularJS, Bootstrap</p>
+		</footer>
+		
 		<!-- JAVASCRIPT -->
 		<script src="js/libs/angular.js"></script><!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>-->
 		<script src="js/libs/angular-route.js"></script>

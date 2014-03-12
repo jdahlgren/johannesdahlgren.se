@@ -9,30 +9,82 @@ app.controller('HomeCtrl', function($scope){
 });
 
 app.controller('ProjectsCtrl', function($scope){
-	$scope.projectsTitle = 'Projects here';	
+	$scope.projectsTitle = 'Projects here';
+	$scope.projects = [
+		{
+			id: 1, 
+			name: 'Demola - ECIT',
+			image: 'http://lorempixel.com/200/150',
+			description: 'Lorem ipsum dolor sit amet, \
+		consectetur adipiscing elit. Aliquam enim felis, \
+		imperdiet vitae accumsan quis, laoreet quis velit. \
+		Vestibulum ac.',
+			date: '2013 - 2014',
+			tag: 'uni',
+		},
+		{
+			id: 2, 
+			name: 'PUM - Politic impact',
+			image: 'http://lorempixel.com/201/150',
+			description: 'Lorem ipsum dolor sit amet, \
+		consectetur adipiscing elit. Aliquam enim felis, \
+		imperdiet vitae accumsan quis, laoreet quis velit. \
+		Vestibulum ac.',
+			date: '2013 - 2014',
+			tag: 'hobby',
+		},
+		{
+			id: 3, 
+			name: 'PUM - Politic impact',
+			image: 'http://lorempixel.com/202/150',
+			description: 'Lorem ipsum dolor sit amet, \
+		consectetur adipiscing elit. Aliquam enim felis, \
+		imperdiet vitae accumsan quis, laoreet quis velit. \
+		Vestibulum ac.',
+			date: '2013 - 2014',
+			tag: 'hobby',
+		},
+	];
 });
+
+app.controller('ProjectDetailCtrl', function($scope, $routeParams){
+	$scope.id = $routeParams.id;
+});
+
 app.controller('CvCtrl', function($scope){
 	$scope.cvTitle = 'CV here';
 });
 app.controller('ContactCtrl', function($scope){
 	$scope.contactTitle = 'Contact me:';
-	$scope.socialMedia = {
-		twitter: {
+	$scope.socialMedia = [
+		{
+			id: 1,
 			name: 'Twitter',
 			link: 'https://twitter.com/J_Dahlgren',
 			logo: 'data/twitter.png'
 		},
-		linkedIn: {
+		{
+			id: 2,
 			name: 'LinkedIn',
 			link: 'http://se.linkedin.com/pub/johannes-dahlgren/64/a88/9a2',
 			logo: 'data/linkedIn.png'
 		},
-		mail: {
+		{
+			id: 3,
 			name: 'Mail',
 			link: 'mailto:johannes.dahlgren@gmail.com',
 			logo: 'data/mail.png'
-		},		
-	};
+		},	
+		{
+			id: 4,
+			name: 'Github',
+			link: 'https://github.com/jdahlgren',
+			logo: 'data/github.png'
+		},
+	];
+	$scope.open = function(url){
+		window.open(url);
+	}
 });
 
 app.controller('HeaderCtrl', function($scope, $location){
@@ -47,7 +99,7 @@ app.controller('CarouselCtrl', function($scope) {
   $scope.addSlide = function() {
     var newWidth = 800 + slides.length;
     slides.push({
-      image: 'http://lorempixel.com//' + newWidth + '/400',
+      image: 'http://lorempixel.com/' + newWidth + '/400',
       text: ['such','wow','dat','much'][slides.length % 4] + ' ' +
         ['meow', 'rawr', 'doge', 'nice', 'very'][slides.length % 5]
     });
@@ -75,6 +127,10 @@ app.config(['$routeProvider', function($routeProvider){
 		when('/', {
 			templateUrl: 'views/home.html',
 			controller: 'HomeCtrl'
+		}).
+		when('/projects/:id',{
+			templateUrl: 'views/details.html',
+			controller: 'ProjectDetailCtrl'
 		}).
 		otherwise({
 			redirectTo: '/'

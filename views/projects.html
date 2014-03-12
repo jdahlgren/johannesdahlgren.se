@@ -1,1 +1,14 @@
-<h1>{{projectsTitle}}</h1>
+<h2>{{projectsTitle}}</h2>
+
+<div ng-repeat="project in projects | orderBy : 'id'" class="projects">
+	
+	<div class="col-md-6">
+	<a href="#/projects/{{project.id}}">
+		<h3>{{project.name}}</h3>
+		<h5>{{project.date}}</h5>
+		<img ng-src="{{project.image}}" />
+		<p>{{project.description}}</p>
+	</a>
+	</div>
+	
+</div>
