@@ -8,88 +8,75 @@ app.controller('HomeCtrl', function($scope){
 		Vestibulum ac.';
 });
 
-app.controller('ProjectsCtrl', function($scope){
+app.factory('Json', function($http){
+	return {
+		getJson: function(url){
+			return $http({
+				url:url,
+				method: 'GET'		
+			});
+		}
+	}
+});
+
+app.controller('ProjectsCtrl', function($scope, Json){
 	$scope.projectsTitle = 'Projects here';
-	$scope.projects = [
-		{
-			id: 1, 
-			name: 'Demola - ECIT',
-			image: 'http://lorempixel.com/200/150',
-			description: 'Lorem ipsum dolor sit amet, \
-		consectetur adipiscing elit. Aliquam enim felis, \
-		imperdiet vitae accumsan quis, laoreet quis velit. \
-		Vestibulum ac.',
-			date: '2013 - 2014',
-			tag: 'uni',
-		},
-		{
-			id: 2, 
-			name: 'PUM - Politic impact',
-			image: 'http://lorempixel.com/201/150',
-			description: 'Lorem ipsum dolor sit amet, \
-		consectetur adipiscing elit. Aliquam enim felis, \
-		imperdiet vitae accumsan quis, laoreet quis velit. \
-		Vestibulum ac.',
-			date: '2013 - 2014',
-			tag: 'hobby',
-		},
-		{
-			id: 3, 
-			name: 'PUM - Politic impact',
-			image: 'http://lorempixel.com/202/150',
-			description: 'Lorem ipsum dolor sit amet, \
-		consectetur adipiscing elit. Aliquam enim felis, \
-		imperdiet vitae accumsan quis, laoreet quis velit. \
-		Vestibulum ac.',
-			date: '2013 - 2014',
-			tag: 'hobby',
-		},
-	];
+	Json.getJson('data/projects.json').success(function(data){
+		$scope.projects = data;
+	});
+	$scope.orderProp = 'id';
+	$scope.filterTag;
+	
 });
 
-app.controller('ProjectDetailCtrl', function($scope, $routeParams){
+app.controller('ProjectDetailCtrl', function($scope, $routeParams, Json){
 	$scope.id = $routeParams.id;
+	Json.getJson('data/projects.json').success(function(data){
+		for (var i = 0; i < data.length; i++) {
+			$scope.lookup[data[i].id] = data[i];
+		}
+		$scope.project = $scope.lookup[$scope.id];
+	});
+	$scope.lookup = {};	
+	
+	$scope.project = $scope.lookup[$scope.id];
+	$scope.test = function(){
+		if($scope.project === undefined){
+			return true;
+		}
+		return false;
+	}
+	
 });
 
-app.controller('CvCtrl', function($scope){
-	$scope.cvTitle = 'CV here';
+app.controller('CvCtrl', function($scope, $http, Json){
+	$scope.cvTitle = 'CV here';	
+	Json.getJson('data/cv.json').success(function(data){
+		$scope.cv = data;
+	});
+	$scope.orderProp = '-date';
 });
-app.controller('ContactCtrl', function($scope){
+
+app.controller('ContactCtrl', function($scope, $http, Json){
 	$scope.contactTitle = 'Contact me:';
-	$scope.socialMedia = [
-		{
-			id: 1,
-			name: 'Twitter',
-			link: 'https://twitter.com/J_Dahlgren',
-			logo: 'data/twitter.png'
-		},
-		{
-			id: 2,
-			name: 'LinkedIn',
-			link: 'http://se.linkedin.com/pub/johannes-dahlgren/64/a88/9a2',
-			logo: 'data/linkedIn.png'
-		},
-		{
-			id: 3,
-			name: 'Mail',
-			link: 'mailto:johannes.dahlgren@gmail.com',
-			logo: 'data/mail.png'
-		},	
-		{
-			id: 4,
-			name: 'Github',
-			link: 'https://github.com/jdahlgren',
-			logo: 'data/github.png'
-		},
-	];
+	Json.getJson('data/contact.json').success(function(data){
+		$scope.socialMedia = data;
+	});
+	$scope.orderProp = 'id';
+	
 	$scope.open = function(url){
-		window.open(url);
+		if(url.indexOf('mailto') === 0){
+			window.location.href = url;
+		}else{
+			window.open(url);
+		}
 	}
 });
 
 app.controller('HeaderCtrl', function($scope, $location){
 	$scope.isActive = function (viewLocation) { 
-        return viewLocation === $location.path();
+		//return viewLocation === $location.path();
+		return viewLocation === '/'+$location.path().split('/')[1];
     };
 });
 

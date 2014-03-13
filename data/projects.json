@@ -1,0 +1,26 @@
+[
+	{
+		"id": 0, 
+		"name": "Demola - ECIT",
+		"image": "http://lorempixel.com/200/150",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2013 - 2014",
+		"tag": "uni"
+	},
+	{
+		"id": 1, 
+		"name": "PUM - Politic impact",
+		"image": "http://lorempixel.com/201/150",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2013 - 2014",
+		"tag": "hobby"
+	},
+	{
+		"id": 2, 
+		"name": "Ansiktsigenkänning",
+		"image": "http://lorempixel.com/202/150",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2013 - 2014",
+		"tag": "hobby"
+	}
+]

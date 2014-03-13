@@ -1,1 +1,7 @@
 <h1>{{cvTitle}}</h1>
+
+<div ng-repeat="item in cv | orderBy : orderProp">
+	<h3>{{item.name}}</h3>
+	<h5>{{item.date}}</h5>
+	<p>{{item.description}}</p>
+</div>

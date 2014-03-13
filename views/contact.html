@@ -3,7 +3,7 @@
 <div ng-repeat="media in socialMedia | orderBy : 'name'" class="contact">
 	<div class="row">
 		<ul class="col-md-4">
-			<li ng-click="open(media.link)"><img ng-src="{{media.logo}}"/>{{media.name}}</li>
+			<li><a ng-href="{{media.link}}"><img ng-src="{{media.logo}}"/>{{media.name}}</a></li>
 		</ul>
 	</div>
 </div>
