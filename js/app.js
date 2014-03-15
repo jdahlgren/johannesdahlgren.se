@@ -24,9 +24,11 @@ app.controller('ProjectsCtrl', function($scope, Json){
 	Json.getJson('data/projects.json').success(function(data){
 		$scope.projects = data;
 	});
-	$scope.orderProp = 'id';
+	$scope.orderProp = '-date';
 	$scope.filterTag;
-	
+	$scope.test = function(){
+		console.log($scope.projects);
+	}
 });
 
 app.controller('ProjectDetailCtrl', function($scope, $routeParams, Json){
@@ -82,8 +84,12 @@ app.controller('HeaderCtrl', function($scope, $location){
 
 app.controller('CarouselCtrl', function($scope) {
   $scope.myInterval = 5000;
-  var slides = $scope.slides = [];
-  $scope.addSlide = function() {
+  var slides = $scope.slides = [{image:'data/braelleranus.png'},
+								{image:'data/paperpilot.png'},
+								{image:'data/ballista.png'},
+								{image:'data/facerecognition.jpg'}];
+  //var slides = $scope.slides = [];
+  /*$scope.addSlide = function() {
     var newWidth = 800 + slides.length;
     slides.push({
       image: 'http://lorempixel.com/' + newWidth + '/400',
@@ -93,7 +99,7 @@ app.controller('CarouselCtrl', function($scope) {
   };
   for (var i=0; i<10; i++) {
     $scope.addSlide();
-  }
+  }*/
 });
 
 

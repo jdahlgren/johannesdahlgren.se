@@ -1,26 +1,102 @@
 [
 	{
 		"id": 0, 
-		"name": "Demola - ECIT",
-		"image": "http://lorempixel.com/200/150",
+		"name": "ECIT",
+		"image": "data/ecit.png",
+		"short": "ECIT is a map and communication tool to aid management at natural disasters and more.",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
 		"date": "2013 - 2014",
-		"tag": "uni"
+		"tag": "uni", 
+		"tools": ["JavaScript", "CartoDB", "OpenStreetMaps"]
 	},
 	{
 		"id": 1, 
 		"name": "PUM - Politic impact",
-		"image": "http://lorempixel.com/201/150",
+		"image": "data/politicimpact.png",
+		"short": "A mobile centered website to make it possible for citizens to impact local politicians.",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
-		"date": "2013 - 2014",
-		"tag": "hobby"
+		"date": "2012 - 2013",
+		"tag": "uni",
+		"tools": ["C# .NET", "JavaScript", "Azure"]
 	},
 	{
 		"id": 2, 
-		"name": "Ansiktsigenkänning",
-		"image": "http://lorempixel.com/202/150",
+		"name": "Face recognition",
+		"image": "data/facerecognition.jpg",
+		"short": "A tool to see if a certain person exists in a database of images of faces.",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
-		"date": "2013 - 2014",
-		"tag": "hobby"
+		"date": "2012",
+		"tag": "uni",
+		"tools": ["MatLab", "Eigenfaces"]
+	},
+	{
+		"id": 3, 
+		"name": "CJ Quiz",
+		"image": "data/cjquiz.png",
+		"short": "A quiz game for up to four players. Written in Java Swing",
+		"description": "A quiz game for up to four players. Answer alternatives is choosen from tags so that the same question have different answers every time.",
+		"date": "2010-2011",
+		"tag": "uni",
+		"tools": ["Java Swing", "MySQL"]
+	},
+	{
+		"id": 4, 
+		"name": "Leveransen",
+		"image": "data/leveransen.png",
+		"short": "An action packed commercial for the fictitious  company \"Lennart\".",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2013",
+		"tag": "uni",
+		"tools": ["Premiere", "After Effects"]
+	},
+	{
+		"id": 5, 
+		"name": "Nürburgring Mega Racer 9000",
+		"image": "data/nmr9000.png",
+		"short": "A 1:st person single player racing game where you race at the Nürburgring.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2011",
+		"tag": "uni",
+		"tools": ["C++", "Ogre3D"]
+	},
+	{
+		"id": 6, 
+		"name": "PaperPilot",
+		"image": "data/paperpilot.png",
+		"short": "A 3:rd person flying Android game where you steer a paper plane inside a 3D room.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2012",
+		"tag": "uni",
+		"tools": ["Java", "Android", "jPCT-AE 3D"]
+	},
+	{
+		"id": 7, 
+		"name": "Modelling of a Ballista",
+		"image": "data/ballista.png",
+		"short": "An implementation of a physically correct simulation of a ballista.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2012",
+		"tag": "uni",
+		"tools": ["MatLab", "C++", "OpenGL"]
+	},
+	{
+		"id": 8, 
+		"name": "MT Tube",
+		"image": "data/mttube.png",
+		"short": "A community where you can add your favourite videos and discuss them with your friends.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2009",
+		"tag": "uni",
+		"tools": ["PHP", "HTML"]
+	},
+	{
+		"id": 9, 
+		"name": "Bra Eller Anus",
+		"image": "data/braelleranus.png",
+		"short": "An app where you can show the world if you think something is \"Bra eller Anus\".",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, imperdiet vitae accumsan quis, laoreet quis velit. Vestibulum ac.",
+		"date": "2013-2014",
+		"tag": "hobby",
+		"tools": ["Android"]
 	}
 ]

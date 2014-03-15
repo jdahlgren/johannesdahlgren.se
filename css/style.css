@@ -36,9 +36,30 @@ p.footer{
 	text-align: center;
 }
 
-.projects img{
-	float: left;
-	margin-right: 10px;
+.project{
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+
+.project:hover{
+	background-color: #eee;
+}
+
+.project img{	
+	width: 200px;
+	height: 150px;
+	display: block;
+	margin: auto;
+}
+.carousel{
+	height: 400px;
+	width: 700px;
+	margin: auto;
+}
+.carouselImg{
+	width: 700px;
+	max-height: 400px;
+	margin:auto;
 }
 	
 .projects a{

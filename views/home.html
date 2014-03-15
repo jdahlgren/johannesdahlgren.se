@@ -1,10 +1,10 @@
 <p>{{lorem}}</p>
 
 <div ng-controller="CarouselCtrl">
-  <div style="height: 400px">
+  <div class="carousel">
 	<carousel interval="myInterval">
 	  <slide ng-repeat="slide in slides" active="slide.active">
-		<img ng-src="{{slide.image}}" style="margin:auto;">
+		<img ng-src="{{slide.image}}" class="carouselImg">
 		<div class="carousel-caption">
 		  <h4>Slide {{$index + 1}}</h4>
 		  <p>{{slide.text}}</p>
