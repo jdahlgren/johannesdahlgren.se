@@ -54,9 +54,13 @@ app.controller('ProjectDetailCtrl', function($scope, $routeParams, Json){
 app.controller('CvCtrl', function($scope, $http, Json){
 	$scope.cvTitle = 'CV here';	
 	Json.getJson('data/cv.json').success(function(data){
-		$scope.cv = data;
+		$scope.cv = data[0];
 	});
 	$scope.orderProp = '-date';
+	$scope.test = function(){
+		console.log($scope.cv);
+	}
+	
 });
 
 app.controller('ContactCtrl', function($scope, $http, Json){

@@ -1,9 +1,7 @@
 <h2>{{contactTitle}}</h2>
 
-<div ng-repeat="media in socialMedia | orderBy : 'name'" class="contact">
-	<div class="row">
-		<ul class="col-md-4">
-			<li><a ng-href="{{media.link}}"><img ng-src="{{media.logo}}"/>{{media.name}}</a></li>
-		</ul>
+<div class="col-md-4">
+	<div ng-repeat="media in socialMedia | orderBy : 'name'" class="contact">	
+		<a ng-href="{{media.link}}"><img ng-src="{{media.logo}}"/></a>
 	</div>
 </div>
