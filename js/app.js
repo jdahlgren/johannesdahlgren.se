@@ -1,11 +1,10 @@
 var app = angular.module('jdApp', ['ngRoute', 'ui.bootstrap']);
 
-app.controller('HomeCtrl', function($scope){
-	$scope.title = 'Johannes Dahlgren';	
-	$scope.lorem = 'Lorem ipsum dolor sit amet, \
-		consectetur adipiscing elit. Aliquam enim felis, \
-		imperdiet vitae accumsan quis, laoreet quis velit. \
-		Vestibulum ac.';
+app.directive('project', function(){
+	return{
+		replace: true,
+		templateUrl: 'directives/project.html'
+	}
 });
 
 app.factory('Json', function($http){
@@ -19,8 +18,15 @@ app.factory('Json', function($http){
 	}
 });
 
+app.controller('HomeCtrl', function($scope, Json){
+	$scope.title = 'Johannes Dahlgren';	
+	Json.getJson('data/about.json').success(function(data){
+		$scope.about = data;
+	});
+});
+
 app.controller('ProjectsCtrl', function($scope, Json){
-	$scope.projectsTitle = 'Projects here';
+	$scope.projectsTitle = 'My projects:';
 	Json.getJson('data/projects.json').success(function(data){
 		$scope.projects = data;
 	});

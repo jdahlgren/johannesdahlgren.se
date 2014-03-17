@@ -1,0 +1,13 @@
+<div class="col-md-4 project">	
+	<h3>{{project.name}}</h3>
+	<h5>{{project.date}}</h5>
+	<img ng-src="{{project.image}}" />
+	<p>{{project.short}}</p>	
+	<div ng-repeat="tool in project.tools" class="toolList">				
+		<button type="button" class="btn btn-default btn-sm" disabled="disabled">{{tool}}</button>				
+	</div>
+	<div style="width:100%;"></div>
+	<div ng-repeat="link in project.links" class="linkList">				
+		<a class="btn btn-success" href="{{link.url}}">{{link.name}}</a>				
+	</div>
+</div>
