@@ -19,8 +19,8 @@
 		<h4>{{item.date}}, {{item.university}}</h4>
 		<p>{{item.description}}</p>
 		<h4>Notable courses</h4>
-		<div ng-repeat="course in item.courses | orderBy: 'toString()'" class="toolList">				
-				<button type="button" class="btn btn-default btn-sm" disabled="disabled">{{course}}</button>				
+		<div ng-repeat="course in item.courses | orderBy: 'toString()'" >				
+				<p class="course">{{course}}</p>
 		</div>
 	</div>
 </div>
@@ -28,6 +28,6 @@
 <div class="col-md-6">
 <h2>Skills</h2>	
 	<div ng-repeat="item in cv.skills | orderBy: ['-skillId','name']" class="toolList">				
-			<button type="button" class="btn btn-success btn-sm" disabled="disabled">{{item.name}} - {{item.skill}}</button>				
+			<button type="button" class="btn btn-default btn-sm" disabled="disabled">{{item.name}} - {{item.skill}}</button>				
 	</div>	
 </div>

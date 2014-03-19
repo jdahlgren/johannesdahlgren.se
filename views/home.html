@@ -1,17 +1,15 @@
-<div>
-	<p>{{about.text}}</p>
+<div class="col-md-8">
+	<p>{{about.me}}</p>
+	<p>{{about.thesis}}</p>
+</div>
+<div class="col-md-4">
+	<img class="homeImg" ng-src="{{about.image}}"/>
+</div>
+<div class="col-md-8">
+	<div ng-repeat="media in about.contact | orderBy : 'name'" class="contact">	
+		<a ng-href="{{media.link}}"><img ng-src="{{media.logo}}"/></a>	
+	</div>
 </div>
 
-<!--<div ng-controller="CarouselCtrl">
-  <div class="carousel">
-	<carousel interval="myInterval">
-	  <slide ng-repeat="slide in slides" active="slide.active">
-		<img ng-src="{{slide.image}}" class="carouselImg">
-		<div class="carousel-caption">
-		  <h4>Slide {{$index + 1}}</h4>
-		  <p>{{slide.text}}</p>
-		</div>
-	  </slide>
-	</carousel>
-  </div>			  
-</div>-->
+
+
